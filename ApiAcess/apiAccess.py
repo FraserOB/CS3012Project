@@ -12,8 +12,7 @@ def data():
     username = request.form['username']
     r = requests.get('http://api.github.com/users/FraserOB')
     json_object = r.text
-    return json_object
-    #return render_template('data.html')
+    return render_template('data.html', userData=json_object)
 
 if __name__ == '__main__':
     app.run(debug=True)
