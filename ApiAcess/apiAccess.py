@@ -10,7 +10,7 @@ def home():
 @app.route('/data', methods=['POST'])
 def data():
     username = request.form['username']
-    r = requests.get('http://api.github.com/users/FraserOB')
+    r = requests.get('http://api.github.com/users/'+username+'')
     json_object = r.text
     return render_template('data.html', userData=json_object)
 
