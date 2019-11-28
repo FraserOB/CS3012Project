@@ -11,7 +11,7 @@ def home():
 def data():
     username = request.form['username']
     r = requests.get('http://api.github.com/users/'+username+'')
-    json_object = r.text
+    json_object = r.json()
     return render_template('data.html', userData=json_object)
 
 if __name__ == '__main__':
